@@ -9,8 +9,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
 .run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
 
-    $rootScope.apiURL = "http://www.carismaconfeitaria.com.br";
-    $rootScope.apiContext = "";
+    $rootScope.apiURL = "http://192.168.25.84";
+    $rootScope.apiContext = "carisma";
 
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
