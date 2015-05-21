@@ -1,0 +1,100 @@
+<ion-view view-title="{{tituloGaleria}}">
+
+  <style>
+
+    .tabs-positive > .tabs{
+      background-color: #d9a3e2 !important;
+    }
+
+    .container img{
+      max-height: 100%;
+      max-width: 99%;
+      padding-left: 1%;
+      padding-top: 1%;
+    }
+
+    .responsive-container {
+        position: relative;
+        width: 100%;
+        border: 0px solid black;
+    }
+
+    .dummy {
+        padding-top: 100%; /* forces 1:1 aspect ratio */
+    }
+
+    .container-show {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        text-align:center; /* Align center inline elements */
+        font: 0/0 a;
+    }
+
+    .container-show:before {
+        content: ' ';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+    }
+
+    .container-show img {
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+  </style>
+
+  <ion-nav-buttons side="right">
+      <button class="button button-icon button-clear ion-compose" ng-click="editPicture();" ng-show="editButton">
+      </button>
+      <button class="button button-icon button-clear ion-android-done" ng-click="doneEditPicture();" ng-show="doneEditButton">
+      </button>
+  </ion-nav-buttons>
+
+  <ion-content>
+
+  <div class="responsive-container" ng-show="containerShow">
+    <div class="dummy"></div>
+
+    <div class="container-show">
+        <img id="camPicShow" src="img/cam.png"/>
+    </div>
+  </div>
+
+  <div class="container" ng-show="containerPic">
+      <img id="camPic" ng-src="{{cameraPic}}"/>
+  </div>
+
+  </ion-content>
+
+  <ion-tabs class="tabs-positive tabs-icon-top" ng-show="tabSource">
+
+      <ion-tab title="Câmera" icon-on="ion-camera" icon-off="ion-camera" ng-click="takePicture('camera');">
+      </ion-tab>
+
+      <ion-tab title="Galeria" icon-on="ion-ios-film" icon-off="ion-ios-film" ng-click="takePicture();">
+      </ion-tab>
+
+      <ion-tab title="Lista" icon-on="ion-ios-list" icon-off="ion-ios-list" ng-show="listButton" ng-click="list();">
+      </ion-tab>
+
+      <ion-tab title="Enviar" icon-on="ion-android-send" icon-off="ion-android-send" ng-click="sendPicture();">
+      </ion-tab>
+
+  </ion-tabs>
+
+  <ion-tabs class="tabs-positive tabs-icon-top" ng-show="tabTools">
+
+      <ion-tab title="Cancelar" icon-on="ion-android-cancel" icon-off="ion-android-cancel" ng-show="cancelEditButton" ng-click="cancelEditPicture();">
+      </ion-tab>
+
+      <ion-tab title="Girar" icon-on="ion-ios-loop-strong" icon-off="ion-ios-loop-strong" ng-click="rotatePicture(90);">
+      </ion-tab>
+
+  </ion-tabs>
+
+</ion-view>

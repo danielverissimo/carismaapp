@@ -1,0 +1,9 @@
+<ion-view view-title="Galerias">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="galeria in galerias" ng-click="abrirGaleria({{galeria.id}},'{{galeria.title}}');">
+        {{galeria.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

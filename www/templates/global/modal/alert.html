@@ -1,0 +1,14 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Alerta</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeAlert()">Fechar</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+      <h1>{{ModalService.getModalMessage()}}</h1>
+      <label class="item">
+          <button class="button button-block button-positive" type="submit">Ok</button>
+      </label>
+  </ion-content>
+</ion-modal-view>
